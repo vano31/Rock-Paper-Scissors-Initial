@@ -22,10 +22,56 @@ function startRound() {
     if (playerSelection === 0) {
         alert (`User Input Not Valid. Computer Wins Round.`);
     } else {
-        alert(`Yahoo!`);
+        //here is where I will put the function randomRPS
     }
 
 }
+
+
+function randomRPS() {
+
+
+    let randomNumber = randomGenerator();
+
+    randomGenerator();
+
+    getRandomGenerator();
+
+    function randomGenerator() {
+        return Math.random();
+    }
+
+    
+    function getRandomGenerator() {
+        return randomNumber;
+        //console.log(randomNumber);
+    }
+
+//How do I store a random number into a  variable permanently? Is that not  possible?
+
+    if (randomNumber <= 0.33) {
+        computerSelection = `ROCK`;
+    }   else if (randomNumber > 0.33 && randomNumber < 0.66) {
+        computerSelection = `PAPER`;
+    }   else {
+        computerSelection = `SCISSORS`;
+    }
+
+}
+
+
+
+randomRPS();
+
+
+//Below code is test
+
+
+
+
+
+
+
 
 startRound();
 

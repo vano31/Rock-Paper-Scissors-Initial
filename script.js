@@ -46,9 +46,10 @@ if (computerWins === 3) {
 
 
 
+for (let i = 0; i < 5; i++) {
+    startRound();
+}
 
-
-startRound();
 
 
 function startRound() {
@@ -61,6 +62,9 @@ function startRound() {
         compareSelection();
         //will put loop for variable roundNumber to iniitiate whenever 
     }
+
+    answer = prompt(`Once again, choose Rock, Paper, or Scissors.`);
+    playerSelection = answer.toUpperCase();
 
 }
 

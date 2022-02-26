@@ -59,8 +59,8 @@ for (let i = 0; i < 5; i++) {
 
 function startRound() {
 
-    let answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
-    let playerSelection = answer.toUpperCase();
+    answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
+    playerSelection = answer.toUpperCase();
     selectionChecker();
 
     

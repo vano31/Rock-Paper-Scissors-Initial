@@ -1,7 +1,10 @@
 //Game of Rock, Paper, Scissors
 
-let answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
-let playerSelection = answer.toUpperCase();
+
+
+let answer; //= prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
+let playerSelection; // = answer.toUpperCase();
+
 
 function selectionChecker () {
     
@@ -13,7 +16,7 @@ function selectionChecker () {
     return playerSelection;
 }
 
-selectionChecker();
+//selectionChecker();
 
 
 
@@ -47,12 +50,21 @@ if (computerWins === 3) {
 
 
 for (let i = 0; i < 5; i++) {
+    
     startRound();
+    
 }
 
 
 
 function startRound() {
+
+    let answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
+    let playerSelection = answer.toUpperCase();
+    selectionChecker();
+
+    
+
     if (playerSelection === 0) {
         alert (`User Input Not Valid. Computer Wins Round.`);
         computerWins += 1;
@@ -63,8 +75,9 @@ function startRound() {
         //will put loop for variable roundNumber to iniitiate whenever 
     }
 
-    answer = prompt(`Once again, choose Rock, Paper, or Scissors.`);
-    playerSelection = answer.toUpperCase();
+    /*answer = prompt(`Once again, choose Rock, Paper, or Scissors.`);
+    playerSelection = answer.toUpperCase(); */
+    
 
 }
 

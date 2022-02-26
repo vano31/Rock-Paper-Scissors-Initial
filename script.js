@@ -15,20 +15,23 @@ function selectionChecker () {
 
 selectionChecker();
 
+
+
 let computerSelection;
-let roundNumber;
+//let roundNumber;
 let computerWins = 0;
 let userWins = 0;
 
 
+/*
 
-
-for (let roundNumber = 0; (roundNumber > 5 || computerWins === 3 || userWins === 3); ++roundNumber) {
+for (let roundNumber = 0; (roundNumber < 5 && (computerWins < 3 || userWins < 3)); ++roundNumber) {
     startRound();
     //Below: repeat prompt for answer. Honestly should have made that a function.
     answer = prompt(`Please write either Rock, Paper, or Scissors. You are on Round ${roundNumber}`);
 
 }
+
 
 if (computerWins === 3) {
     alert(`Sorry...The Computer won 3 out of 5 matches`);
@@ -39,8 +42,13 @@ if (computerWins === 3) {
  }
 
 
+*/
 
 
+
+
+
+startRound();
 
 
 function startRound() {
@@ -132,4 +140,6 @@ function compareSelection() {
 
     }
 }
+
+
 

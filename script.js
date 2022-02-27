@@ -48,10 +48,20 @@ if (computerWins === 3) {
 */
 
 
+let i;
 
-for (let i = 0; i < 5; i++) {
+for (i = 0; i < 5; i++) {
     
     startRound();
+    if (computerWins === 3) {
+        alert(`Sorry...The Computer won 3 out of 5 matches`);
+        } else if (userWins === 3) {
+            alert (`Congratulations! You won 3 out of 5 matches!`);
+        } else if (i === 4) {
+            alert (`Looks like it was a tie!`);
+     } 
+    
+    let roundsLeft;
     
 }
 
@@ -59,7 +69,8 @@ for (let i = 0; i < 5; i++) {
 
 function startRound() {
 
-    answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
+    roundsLeft = 5 - i;
+    answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match! You have ${userWins} wins, ${computerWins} losses, and ${roundsLeft} rounds left.`);
     playerSelection = answer.toUpperCase();
     selectionChecker();
 

@@ -2,8 +2,8 @@
 
 
 
-let answer; //= prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match!`);
-let playerSelection; // = answer.toUpperCase();
+let answer; 
+let playerSelection; 
 
 
 function selectionChecker () {
@@ -16,41 +16,18 @@ function selectionChecker () {
     return playerSelection;
 }
 
-//selectionChecker();
 
 
 
 let computerSelection;
-//let roundNumber;
 let computerWins = 0;
 let userWins = 0;
 
 
-/*
-
-for (let roundNumber = 0; (roundNumber < 5 && (computerWins < 3 || userWins < 3)); ++roundNumber) {
-    startRound();
-    //Below: repeat prompt for answer. Honestly should have made that a function.
-    answer = prompt(`Please write either Rock, Paper, or Scissors. You are on Round ${roundNumber}`);
-
-}
-
-
-if (computerWins === 3) {
-    alert(`Sorry...The Computer won 3 out of 5 matches`);
-    } else if (userWins === 3) {
-        alert (`Congratulations! You won 3 out of 5 matches!`);
-    } else if (roundNumber === 5) {
-        alert (`Looks like it was a tie!`);
- }
-
-
-*/
-
 
 let i;
 
-for (i = 0; i < 5; i++) {
+for (i = 0; i < 5 && computerWins < 3 && userWins < 3; i++) {
     
     startRound();
     if (computerWins === 3) {
@@ -81,18 +58,14 @@ function startRound() {
         computerWins += 1;
     } else {
         randomRPS();
-        //this is where you put compareSelection():
         compareSelection();
-        //will put loop for variable roundNumber to iniitiate whenever 
+        
     }
-
-    /*answer = prompt(`Once again, choose Rock, Paper, or Scissors.`);
-    playerSelection = answer.toUpperCase(); */
     
 
 }
 
-//startRound(); <-- this needs to be  removed and put in the for statement above 
+
 
 function randomRPS() {
     let randomNumber = randomGenerator();
@@ -106,10 +79,10 @@ function randomRPS() {
     
     function getRandomGenerator() {
         return randomNumber;
-        //console.log(randomNumber);
+        
     }
 
-//How do I store a random number into a  variable permanently? Is that not  possible?
+
 
     if (randomNumber <= 0.33) {
         computerSelection = `ROCK`;

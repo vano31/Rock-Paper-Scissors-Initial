@@ -1,0 +1,20 @@
+
+#page {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.one,
+.two,
+.three,
+.four {
+
+    border-style: solid;
+    border-color: black;
+    box-sizing: border-box;
+    height: 225px;
+    /*width: 400px;*/
+
+}

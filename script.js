@@ -1,6 +1,6 @@
 //Game of Rock, Paper, Scissors
 
-
+/*
 
 let answer; 
 let playerSelection; 

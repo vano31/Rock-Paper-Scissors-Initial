@@ -1,6 +1,6 @@
 //Game of Rock, Paper, Scissors
 
-/*
+
 
 let answer; 
 let playerSelection; 
@@ -17,12 +17,9 @@ function selectionChecker () {
 }
 
 
-
-
 let computerSelection;
 let computerWins = 0;
 let userWins = 0;
-
 
 
 let i;
@@ -43,15 +40,12 @@ for (i = 0; i < 5 && computerWins < 3 && userWins < 3; i++) {
 }
 
 
-
 function startRound() {
 
     roundsLeft = 5 - i;
     answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match! You have ${userWins} wins, ${computerWins} losses, and ${roundsLeft} rounds left.`);
     playerSelection = answer.toUpperCase();
     selectionChecker();
-
-    
 
     if (playerSelection === 0) {
         alert (`User Input Not Valid. Computer Wins Round.`);
@@ -62,9 +56,7 @@ function startRound() {
         
     }
     
-
 }
-
 
 
 function randomRPS() {
@@ -75,14 +67,11 @@ function randomRPS() {
     function randomGenerator() {
         return Math.random();
     }
-
     
     function getRandomGenerator() {
         return randomNumber;
         
     }
-
-
 
     if (randomNumber <= 0.33) {
         computerSelection = `ROCK`;
@@ -93,8 +82,6 @@ function randomRPS() {
     }
 
 }
-
-
 
 
 function compareSelection() {
@@ -137,7 +124,6 @@ function compareSelection() {
                 alert(`Tie! You and Computer both chose SCISSORS.`);
             }
             break;
-
 
     }
 }

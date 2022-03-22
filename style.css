@@ -1,7 +1,17 @@
 
+html,
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+
 #page {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
 
 }
 
@@ -14,10 +24,19 @@
     border-style: solid;
     border-color: black;
     box-sizing: border-box;
-    height: 500px;
+    /*height: 500px;*/
     /*width: 400px;*/
 
 }
+
+
+/*
+.two,
+.four {
+    align-self: stretch; 
+}
+
+*/
 
 .three {
     display: flex;

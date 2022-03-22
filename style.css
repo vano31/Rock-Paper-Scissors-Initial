@@ -38,8 +38,29 @@ body {
 
 */
 
+.middle {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
 .three {
     display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+
+#roundsLeft {
+    text-align: center;
+}
+
+.user-column,
+/*.vs,*/
+.comp-column {
+    height: 450px;
+    width: 450px;
 }
 
 .user-column,
@@ -48,4 +69,18 @@ body {
     flex-direction: column;
     border-style: solid;
     border-color: black;
+    align-items: center;
 }
+
+.vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 0;
+}
+
+#status-user,
+#status-comp {
+    margin-top: auto;
+}
+

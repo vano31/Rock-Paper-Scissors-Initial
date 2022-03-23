@@ -21,6 +21,7 @@ let computerSelection;
 let computerWins = 0;
 let userWins = 0;
 
+/*
 
 let i;
 
@@ -38,6 +39,7 @@ for (i = 0; i < 5 && computerWins < 3 && userWins < 3; i++) {
     let roundsLeft;
     
 }
+
 
 
 function startRound() {
@@ -58,6 +60,7 @@ function startRound() {
     
 }
 
+*/
 
 function randomRPS() {
     let randomNumber = randomGenerator();
@@ -127,6 +130,27 @@ function compareSelection() {
 
     }
 }
+
+
+
+
+const four = document.querySelector('.four')
+
+const rockButton = document.createElement('button');
+rockButton.setAttribute('type', 'button');
+rockButton.textContent = 'Rock';
+four.appendChild(rockButton);
+
+
+const paperButton = document.createElement("button");
+paperButton.setAttribute('type', 'button');
+paperButton.textContent = "Paper";
+four.appendChild(paperButton);
+
+const scissorsButton = document.createElement("button");
+scissorsButton.setAttribute('type', 'button');
+scissorsButton.textContent = "Scissors";
+four.appendChild(scissorsButton);
 
 
 

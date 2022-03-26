@@ -54,6 +54,7 @@ function startRound() {
     //playerSelection = answer.toUpperCase();
     //selectionChecker();
 
+/*
     if (playerSelection === 0) {
         alert (`User Input Not Valid. Computer Wins Round.`);
         computerWins += 1;
@@ -62,6 +63,11 @@ function startRound() {
         compareSelection();
         
     }
+
+    */
+
+    randomRPS();
+    compareSelection();
     
 }
 

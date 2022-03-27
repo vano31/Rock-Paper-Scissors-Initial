@@ -175,7 +175,6 @@ buttons.forEach((button) => {
             console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}.`);
 
 
-            
             if (computerWins === 3) {
                 alert(`Sorry...The Computer won 3 out of 5 matches`);
                 computerWins = 0;

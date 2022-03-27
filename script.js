@@ -1,7 +1,6 @@
 //Game of Rock, Paper, Scissors
 
 
-
 let answer; 
 let playerSelection; 
 
@@ -19,14 +18,13 @@ function selectionChecker () {
 
 */
 
-
 let computerSelection;
 let computerWins = 0;
 let userWins = 0;
+let tieCount = 0;
+let i = 0;
 
-
-
-let i;
+/*
 
 for (i = 0; i < 5 && computerWins < 3 && userWins < 3; i++) {
     
@@ -43,13 +41,11 @@ for (i = 0; i < 5 && computerWins < 3 && userWins < 3; i++) {
     
 }
 
-
-
-
+*/
 
 function startRound() {
 
-    roundsLeft = 5 - i;
+    //roundsLeft = 5 - i;
     //answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match! You have ${userWins} wins, ${computerWins} losses, and ${roundsLeft} rounds left.`);
     //playerSelection = answer.toUpperCase();
     //selectionChecker();
@@ -63,17 +59,11 @@ function startRound() {
         compareSelection();
         
     }
-
     */
 
-    randomRPS();
+    //randomRPS();
     compareSelection();
-    
 }
-
-
-
-
 
 
 function randomRPS() {
@@ -99,7 +89,6 @@ function randomRPS() {
 
 }
 
-
 function compareSelection() {
 
     switch (playerSelection) {
@@ -112,6 +101,7 @@ function compareSelection() {
                 userWins += 1;
             }   else if (computerSelection === `ROCK`) {
                 alert(`Tie! You and Computer both chose ROCK.`);
+                tieCount += 1;
             }
             break;
 
@@ -125,6 +115,7 @@ function compareSelection() {
                 userWins += 1;
             }   else if (computerSelection === `PAPER`) {
                 alert(`Tie! You and Computer both chose PAPER.`);
+                tieCount += 1;
             }
             break;
 
@@ -138,13 +129,12 @@ function compareSelection() {
                 userWins += 1;
             }   else if (computerSelection === `SCISSORS`) {
                 alert(`Tie! You and Computer both chose SCISSORS.`);
+                tieCount += 1;
             }
             break;
 
     }
 }
-
-
 
 
 const four = document.querySelector('.four')
@@ -155,7 +145,6 @@ rockButton.setAttribute(`id`, `ROCK`);
 rockButton.classList.add(`option`);
 rockButton.textContent = 'Rock';
 four.appendChild(rockButton);
-
 
 const paperButton = document.createElement("button");
 paperButton.setAttribute('type', 'button');
@@ -171,17 +160,40 @@ scissorsButton.classList.add(`option`);
 scissorsButton.textContent = "Scissors";
 four.appendChild(scissorsButton);
 
-
 const buttons = document.querySelectorAll(`button`);
+
+
 
 buttons.forEach((button) => {
     button.addEventListener(`click`, () => {
         playerSelection = button.getAttribute(`id`);
-        console.log(playerSelection);
-        
+       
+            i += 1
+            randomRPS();
+            startRound();
+           
+            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}.`);
 
+
+            
+            if (computerWins === 3) {
+                alert(`Sorry...The Computer won 3 out of 5 matches`);
+                computerWins = 0;
+                userWins = 0;
+                i = 0;
+                } else if (userWins === 3) {
+                    alert (`Congratulations! You won 3 out of 5 matches!`);
+                    computerWins = 0;
+                    userWins = 0;
+                    i = 0;
+                } else if (i === 5) {
+                    alert (`Looks like it was a tie!`);
+                    computerWins = 0;
+                    userWins = 0;
+                    i = 0;
+             } 
+             
     });
 
 });
-
 

@@ -176,7 +176,7 @@ buttons.forEach((button) => {
 
 
             if (computerWins === 3) {
-                alert(`Sorry...The Computer won 3 out of 5 matches`);
+                alert(`Sorry...The Computer won 3 out of 5 matches.`);
                 computerWins = 0;
                 userWins = 0;
                 i = 0;
@@ -186,13 +186,28 @@ buttons.forEach((button) => {
                     userWins = 0;
                     i = 0;
                 } else if (i === 5) {
+
+                    if (userWins > computerWins) {
+                        alert (`Nailbiter! Congruatlations! You won more rounds than the computer!`);
+                    }   else if (userWins < computerWins) {
+                        alert (`So close! Sorry...The Computer won more rounds than you.`);
+                    }   else {
+                        alert(`Looks like it was a tie`);
+                    }
+
+                    computerWins = 0;
+                    userWins = 0;
+                    i = 0;
+
+                    /*
                     alert (`Looks like it was a tie!`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
-             } 
+                    */
+                } 
              
-    });
+    }); 
 
 });
 

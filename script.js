@@ -14,6 +14,7 @@ let i = 0;
 
 
 
+
 function startRound() {
 
     compareSelection();
@@ -48,13 +49,13 @@ function compareSelection() {
     switch (playerSelection) {
         case `ROCK`:
             if (computerSelection === `PAPER`) {
-                alert(`Computer chose PAPER. You lose this round. PAPER beats ROCK.`);
+                messageDiv.textContent = `Computer chose PAPER. You lose this round. PAPER beats ROCK. You have ${5 - i} rounds left.`;
                 computerWins += 1;
             }   else if (computerSelection === `SCISSORS`) {
-                alert(`Computer chose SCISSORS. You win this round! ROCK beats SCISSORS.`);
+                messageDiv.textContent = `Computer chose SCISSORS. You win this round! ROCK beats SCISSORS. You have ${5 - i} rounds left.`;
                 userWins += 1;
             }   else if (computerSelection === `ROCK`) {
-                alert(`Tie! You and Computer both chose ROCK.`);
+                messageDiv.textContent = `Tie! You and Computer both chose ROCK. You have ${5 - i} rounds left.`;
                 tieCount += 1;
             }
             break;
@@ -62,13 +63,13 @@ function compareSelection() {
 
         case `PAPER`:
             if (computerSelection === `SCISSORS`) {
-                alert(`Computer chose SCISSORS. You lose this round. SCISSORS beat PAPER.`);
+                messageDiv.textContent = `Computer chose SCISSORS. You lose this round. SCISSORS beat PAPER. You have ${5 - i} rounds left.`;
                 computerWins += 1;
             }   else if (computerSelection === `ROCK`) {
-                alert(`Computer chose ROCK. You win this round! PAPER beats ROCK.`);
+                messageDiv.textContent = `Computer chose ROCK. You win this round! PAPER beats ROCK. You have ${5 - i} rounds left.`;
                 userWins += 1;
             }   else if (computerSelection === `PAPER`) {
-                alert(`Tie! You and Computer both chose PAPER.`);
+                messageDiv.textContent = `Tie! You and Computer both chose PAPER. You have ${5 - i} rounds left.`;
                 tieCount += 1;
             }
             break;
@@ -76,18 +77,19 @@ function compareSelection() {
 
         case `SCISSORS`:
             if (computerSelection === `ROCK`) {
-                alert(`Computer chose ROCK. You lose this round. ROCK beats SCISSORS.`);
+                messageDiv.textContent = `Computer chose ROCK. You lose this round. ROCK beats SCISSORS. You have ${5 - i} rounds left.`;
                 computerWins += 1;
             }   else if (computerSelection === `PAPER`) {
-                alert(`Computer chose PAPER. You win this round! SCISSORS beats PAPER.`);
+                messageDiv.textContent = `Computer chose PAPER. You win this round! SCISSORS beats PAPER. You have ${5 - i} rounds left.`;
                 userWins += 1;
             }   else if (computerSelection === `SCISSORS`) {
-                alert(`Tie! You and Computer both chose SCISSORS.`);
+                messageDiv.textContent = `Tie! You and Computer both chose SCISSORS. You have ${5 - i} rounds left.`;
                 tieCount += 1;
             }
             break;
 
     }
+
 }
 
 
@@ -138,7 +140,8 @@ buttons.forEach((button) => {
             randomRPS();
             startRound();
            
-            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times.`);            
+            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times. You have ${5 - i} rounds left.`);            
+            
             playerSelectionDoc.textContent = `${playerSelection}`;
             computerSelectionDoc.textContent = `${computerSelection}`;
             userWinsDoc.textContent = `${userWins}`;
@@ -146,13 +149,13 @@ buttons.forEach((button) => {
             tieDoc.textContent = `${tieCount}`;
 
             if (computerWins === 3) {
-                messageDiv.textContent = `Sorry...The Computer won 3 out of 5 matches. Press a button to start all over.`;
+                messageDiv.textContent = `Sorry...The Computer won 3 out of 5 rounds. Press a button to start all over.`;
                 computerWins = 0;
                 userWins = 0;
                 i = 0;
                 tieCount = 0;
                 }   else if (userWins === 3) {
-                    messageDiv.textContent = `Congratulations! You won 3 out of 5 matches! Press a button to start all over.`;
+                    messageDiv.textContent = `Congratulations! You won 3 out of 5 rounds! Press a button to start all over.`;
                     computerWins = 0;
                     userWins = 0;
                     i = 0;

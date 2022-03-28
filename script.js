@@ -124,9 +124,9 @@ let tieDoc = document.querySelector(`#tiesDisplay`);
 
 
 let messageDiv = document.createElement("div");
+messageDiv.classList.add(`message`);
 let outcome = document.querySelector(`.outcome`);
 outcome.appendChild(messageDiv);
-
 
 
 
@@ -138,7 +138,7 @@ buttons.forEach((button) => {
             randomRPS();
             startRound();
            
-            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times.`);
+            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times.`);            
             playerSelectionDoc.textContent = `${playerSelection}`;
             computerSelectionDoc.textContent = `${computerSelection}`;
             userWinsDoc.textContent = `${userWins}`;
@@ -146,32 +146,32 @@ buttons.forEach((button) => {
             tieDoc.textContent = `${tieCount}`;
 
             if (computerWins === 3) {
-                alert(`Sorry...The Computer won 3 out of 5 matches. Press a button to start all over.`);
+                messageDiv.textContent = `Sorry...The Computer won 3 out of 5 matches. Press a button to start all over.`;
                 computerWins = 0;
                 userWins = 0;
                 i = 0;
                 tieCount = 0;
                 }   else if (userWins === 3) {
-                    alert (`Congratulations! You won 3 out of 5 matches! Press a button to start all over.`);
+                    messageDiv.textContent = `Congratulations! You won 3 out of 5 matches! Press a button to start all over.`;
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 }   else if (tieCount === 2 && userWins === 2) {
-                    alert (`Computer can't catch up anymore! You won the most out of 5 rounds! Press a button to start all over.`);
+                    messageDiv.textContent = `Computer can't catch up anymore! You won the most out of 5 rounds! Press a button to start all over.`;
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 }   else if (tieCount === 2 && computerWins === 2) {
-                    alert (`You can't catch up anymore... Computer won the most out of 3 rounds! Press a button to start all over.`);
+                    messageDiv.textContent = `You can't catch up anymore... Computer won the most out of 3 rounds! Press a button to start all over.`;
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 
                 }   else if (i === 5) {
-                    alert (`Looks like it was a tie! Press a button to start all over`);
+                    messageDiv.textContent = `Looks like it was a tie! Press a button to start all over.`;
                     computerWins = 0;
                     userWins = 0;
                     i = 0;

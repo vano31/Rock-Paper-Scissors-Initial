@@ -172,7 +172,7 @@ buttons.forEach((button) => {
             randomRPS();
             startRound();
            
-            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}.`);
+            console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times.`);
 
 
             if (computerWins === 3) {
@@ -180,12 +180,37 @@ buttons.forEach((button) => {
                 computerWins = 0;
                 userWins = 0;
                 i = 0;
-                } else if (userWins === 3) {
+                tieCount = 0;
+                }   else if (userWins === 3) {
                     alert (`Congratulations! You won 3 out of 5 matches!`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
-                } else if (i === 5) {
+                    tieCount = 0;
+                }   else if (tieCount === 2 && userWins === 2) {
+                    alert (`Computer can't catch up anymore! You won the most out of 5 rounds!`);
+                    computerWins = 0;
+                    userWins = 0;
+                    i = 0;
+                    tieCount = 0;
+                }   else if (tieCount === 2 && computerWins === 2) {
+                    alert (`You can't catch up anymore... Computer won the most out of 3 rounds!`);
+                    computerWins = 0;
+                    userWins = 0;
+                    i = 0;
+                    tieCount = 0;
+                
+                }   else if (i === 5) {
+                    alert (`Looks like it was a tie!`);
+                    computerWins = 0;
+                    userWins = 0;
+                    i = 0;
+                    tieCount = 0;
+                }
+                    
+                /*(i === 5) {
+
+                    
 
                     if (userWins > computerWins) {
                         alert (`Nailbiter! Congruatlations! You won more rounds than the computer!`);
@@ -199,13 +224,16 @@ buttons.forEach((button) => {
                     userWins = 0;
                     i = 0;
 
+
+                    */
+
                     /*
                     alert (`Looks like it was a tie!`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     */
-                } 
+                
              
     }); 
 

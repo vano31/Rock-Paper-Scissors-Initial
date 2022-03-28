@@ -52,7 +52,7 @@ body {
 }
 
 
-#roundsLeft {
+#ties {
     text-align: center;
 }
 
@@ -79,13 +79,32 @@ body {
     flex: 0 1 0;
 }
 
+/*
+
 #status-user,
 #status-comp {
     margin-top: auto;
 }
 
+*/
+
 .four {
     display: flex;
     flex-direction: row;
     gap: 30px;
+}
+
+#status-user,
+#status-comp {
+    height: 100px;
+    width: 100px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    margin-top: 70px;
+
+}
+
+.outcome {
+    text-align: center;
 }

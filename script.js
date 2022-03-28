@@ -4,19 +4,7 @@
 let answer; 
 let playerSelection; 
 
-/*
 
-function selectionChecker () {
-    
-    if (playerSelection === `ROCK` || playerSelection === `PAPER` || playerSelection === `SCISSORS`) { 
-        playerSelection = playerSelection;
-    } else {
-        playerSelection = 0;
-    }
-    return playerSelection;
-}
-
-*/
 
 let computerSelection;
 let computerWins = 0;
@@ -24,44 +12,10 @@ let userWins = 0;
 let tieCount = 0;
 let i = 0;
 
-/*
 
-for (i = 0; i < 5 && computerWins < 3 && userWins < 3; i++) {
-    
-    startRound();
-    if (computerWins === 3) {
-        alert(`Sorry...The Computer won 3 out of 5 matches`);
-        } else if (userWins === 3) {
-            alert (`Congratulations! You won 3 out of 5 matches!`);
-        } else if (i === 4) {
-            alert (`Looks like it was a tie!`);
-     } 
-    
-    let roundsLeft;
-    
-}
-
-*/
 
 function startRound() {
 
-    //roundsLeft = 5 - i;
-    //answer = prompt(`Please write either Rock, Paper, or Scissors. Win 3 out of 5 rounds to win the match! You have ${userWins} wins, ${computerWins} losses, and ${roundsLeft} rounds left.`);
-    //playerSelection = answer.toUpperCase();
-    //selectionChecker();
-
-/*
-    if (playerSelection === 0) {
-        alert (`User Input Not Valid. Computer Wins Round.`);
-        computerWins += 1;
-    } else {
-        randomRPS();
-        compareSelection();
-        
-    }
-    */
-
-    //randomRPS();
     compareSelection();
 }
 
@@ -162,6 +116,18 @@ four.appendChild(scissorsButton);
 
 const buttons = document.querySelectorAll(`button`);
 
+let playerSelectionDoc = document.querySelector(`#playerSelection`);
+let computerSelectionDoc = document.querySelector(`#computerSelection`);
+let userWinsDoc = document.querySelector(`#userWins`);
+let computerWinsDoc = document.querySelector(`#computerWins`); 
+let tieDoc = document.querySelector(`#tiesDisplay`);
+
+
+let messageDiv = document.createElement("div");
+let outcome = document.querySelector(`.outcome`);
+outcome.appendChild(messageDiv);
+
+
 
 
 buttons.forEach((button) => {
@@ -173,67 +139,44 @@ buttons.forEach((button) => {
             startRound();
            
             console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times.`);
-
+            playerSelectionDoc.textContent = `${playerSelection}`;
+            computerSelectionDoc.textContent = `${computerSelection}`;
+            userWinsDoc.textContent = `${userWins}`;
+            computerWinsDoc.textContent = `${computerWins}`;
+            tieDoc.textContent = `${tieCount}`;
 
             if (computerWins === 3) {
-                alert(`Sorry...The Computer won 3 out of 5 matches.`);
+                alert(`Sorry...The Computer won 3 out of 5 matches. Press a button to start all over.`);
                 computerWins = 0;
                 userWins = 0;
                 i = 0;
                 tieCount = 0;
                 }   else if (userWins === 3) {
-                    alert (`Congratulations! You won 3 out of 5 matches!`);
+                    alert (`Congratulations! You won 3 out of 5 matches! Press a button to start all over.`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 }   else if (tieCount === 2 && userWins === 2) {
-                    alert (`Computer can't catch up anymore! You won the most out of 5 rounds!`);
+                    alert (`Computer can't catch up anymore! You won the most out of 5 rounds! Press a button to start all over.`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 }   else if (tieCount === 2 && computerWins === 2) {
-                    alert (`You can't catch up anymore... Computer won the most out of 3 rounds!`);
+                    alert (`You can't catch up anymore... Computer won the most out of 3 rounds! Press a button to start all over.`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 
                 }   else if (i === 5) {
-                    alert (`Looks like it was a tie!`);
+                    alert (`Looks like it was a tie! Press a button to start all over`);
                     computerWins = 0;
                     userWins = 0;
                     i = 0;
                     tieCount = 0;
                 }
-                    
-                /*(i === 5) {
-
-                    
-
-                    if (userWins > computerWins) {
-                        alert (`Nailbiter! Congruatlations! You won more rounds than the computer!`);
-                    }   else if (userWins < computerWins) {
-                        alert (`So close! Sorry...The Computer won more rounds than you.`);
-                    }   else {
-                        alert(`Looks like it was a tie`);
-                    }
-
-                    computerWins = 0;
-                    userWins = 0;
-                    i = 0;
-
-
-                    */
-
-                    /*
-                    alert (`Looks like it was a tie!`);
-                    computerWins = 0;
-                    userWins = 0;
-                    i = 0;
-                    */
-                
              
     }); 
 

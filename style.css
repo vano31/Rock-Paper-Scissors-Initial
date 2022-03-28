@@ -21,7 +21,7 @@ body {
 .three,
 .four {
 
-    border-style: solid;
+    /*border-style: solid;*/
     border-color: black;
     box-sizing: border-box;
     /*height: 500px;*/
@@ -67,7 +67,7 @@ body {
 .comp-column {
     display: flex;
     flex-direction: column;
-    border-style: solid;
+    /*border-style: solid; */
     border-color: black;
     align-items: center;
 }
@@ -116,19 +116,21 @@ body {
 /*Class .win  . lose  .tie are to be assigned to status-user and status-comp based on round outcome*/
 
 .win {
-    color: green;
+    background-color: green;
 
 }
 
 .lose {
-    color: red;
+    background-color: red;
 }
 
 .tie {
-    color: yellow;
+    background-color: yellow;
 }
 
 button {
     padding: 32px 32px;
     font-size: 25px;
 }
+
+

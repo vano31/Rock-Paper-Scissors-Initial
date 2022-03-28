@@ -4,15 +4,11 @@
 let answer; 
 let playerSelection; 
 
-
-
 let computerSelection;
 let computerWins = 0;
 let userWins = 0;
 let tieCount = 0;
 let i = 0;
-
-
 
 
 function startRound() {
@@ -44,6 +40,7 @@ function randomRPS() {
 
 }
 
+
 function compareSelection() {
 
     switch (playerSelection) {
@@ -51,12 +48,21 @@ function compareSelection() {
             if (computerSelection === `PAPER`) {
                 messageDiv.textContent = `Computer chose PAPER. You lose this round. PAPER beats ROCK. You have ${5 - i} rounds left.`;
                 computerWins += 1;
+                statusUser.classList.add(`lose`);
+                toggleStatusClass();
+                
             }   else if (computerSelection === `SCISSORS`) {
                 messageDiv.textContent = `Computer chose SCISSORS. You win this round! ROCK beats SCISSORS. You have ${5 - i} rounds left.`;
                 userWins += 1;
+                statusUser.classList.add(`win`);
+                toggleStatusClass();
+                
             }   else if (computerSelection === `ROCK`) {
                 messageDiv.textContent = `Tie! You and Computer both chose ROCK. You have ${5 - i} rounds left.`;
                 tieCount += 1;
+                statusUser.classList.add(`tie`);
+                toggleStatusClass();
+                
             }
             break;
 
@@ -65,12 +71,21 @@ function compareSelection() {
             if (computerSelection === `SCISSORS`) {
                 messageDiv.textContent = `Computer chose SCISSORS. You lose this round. SCISSORS beat PAPER. You have ${5 - i} rounds left.`;
                 computerWins += 1;
+                statusUser.classList.add(`lose`);
+                toggleStatusClass();
+               
             }   else if (computerSelection === `ROCK`) {
                 messageDiv.textContent = `Computer chose ROCK. You win this round! PAPER beats ROCK. You have ${5 - i} rounds left.`;
                 userWins += 1;
+                statusUser.classList.add(`win`);
+                toggleStatusClass();
+                
             }   else if (computerSelection === `PAPER`) {
                 messageDiv.textContent = `Tie! You and Computer both chose PAPER. You have ${5 - i} rounds left.`;
                 tieCount += 1;
+                statusUser.classList.add(`tie`);
+                toggleStatusClass();
+                
             }
             break;
 
@@ -79,18 +94,28 @@ function compareSelection() {
             if (computerSelection === `ROCK`) {
                 messageDiv.textContent = `Computer chose ROCK. You lose this round. ROCK beats SCISSORS. You have ${5 - i} rounds left.`;
                 computerWins += 1;
+                statusUser.classList.add(`lose`);
+                toggleStatusClass();
+               
             }   else if (computerSelection === `PAPER`) {
                 messageDiv.textContent = `Computer chose PAPER. You win this round! SCISSORS beats PAPER. You have ${5 - i} rounds left.`;
                 userWins += 1;
+                statusUser.classList.add(`win`);
+                toggleStatusClass();
+               
             }   else if (computerSelection === `SCISSORS`) {
                 messageDiv.textContent = `Tie! You and Computer both chose SCISSORS. You have ${5 - i} rounds left.`;
                 tieCount += 1;
+                statusUser.classList.add(`tie`);
+                toggleStatusClass();
+               
             }
             break;
 
     }
 
 }
+
 
 
 const four = document.querySelector('.four')
@@ -131,13 +156,38 @@ let outcome = document.querySelector(`.outcome`);
 outcome.appendChild(messageDiv);
 
 
+statusUser = document.querySelector(`#status-user`);
+statusComp = document.querySelector(`#status-comp`);
+
+
+function toggleStatusClass() {
+    if (statusUser.classList.contains(`win`)) {
+        statusComp.classList.add(`lose`);
+
+}   else if (statusUser.classList.contains(`lose`)) {
+    statusComp.classList.add(`win`);
+
+}   else if (statusUser.classList.contains(`tie`)) {
+    statusComp.classList.add(`tie`);
+}
+
+};
+
+
+statusUser.classList.add(`tie`);
+statusComp.classList.add(`tie`);
 
 buttons.forEach((button) => {
     button.addEventListener(`click`, () => {
         playerSelection = button.getAttribute(`id`);
+
+        statusComp.removeAttribute(`class`);
+        statusUser.removeAttribute(`class`);
        
             i += 1
             randomRPS();
+
+
             startRound();
            
             console.log( `You chose  ${playerSelection}, computer chose ${computerSelection}. You won ${userWins} rounds, lost ${computerWins} rounds, and have tied ${tieCount} times. You have ${5 - i} rounds left.`);            
